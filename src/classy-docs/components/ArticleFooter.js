@@ -1,0 +1,38 @@
+import PropTypes from 'prop-types';
+import TimeAgo from "react-timeago"
+
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
+
+const ArticleFooter = props => {
+  const { lastEdit, contentRepoUrl, relativeDirectory, themeStyle, customStyle = '' } = props;
+
+  const editOnGithubURL = `${contentRepoUrl}/${relativeDirectory}`
+
+  return (
+    <div css={[themeStyle, customStyle]}>
+      <div>
+          <a href={editOnGithubURL}>Edit on GitHub</a>
+
+        <span>
+          {" "}&nbsp; · &nbsp;{" "}
+        </span>
+
+        <span>
+          Updated{" "}
+          <TimeAgo date={lastEdit} minPeriod={60}/>
+        </span>
+      </div>
+    </div>
+  );
+};
+
+ArticleFooter.propTypes = {
+  lastEdit: PropTypes.string,
+  contentRepoUrl: PropTypes.string,
+  relativeDirectory: PropTypes.string,
+  themeStyle: PropTypes.string,
+  customStyle: PropTypes.string,
+};
+
+export default ArticleFooter;
