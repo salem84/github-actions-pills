@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import 'prismjs/themes/prism-okaidia.css';
-// import '../classy-docs/styles/variables';
-import Global from '../classy-docs/styles/global';
+// import '../styles/variables';
+import Global from '../styles/global';
 
-import Article from '../classy-docs/components/Article';
-import Branding from '../classy-docs/components/Branding';
-import Bodytext from '../classy-docs/components/Bodytext';
-import Footer from '../classy-docs/components/Footer';
-import Header from '../classy-docs/components/Header';
-import Heading from '../classy-docs/components/Heading';
-import Layout from '../classy-docs/components/Layout';
-import Menu from '../classy-docs/components/Menu';
-import Seo from '../classy-docs/components/Seo';
-import Sidebar from '../classy-docs/components/Sidebar';
-import ArticleFooter from '../classy-docs/components/ArticleFooter';
-import layoutSidebar from '../classy-docs/styles/layoutSidebar';
+import Article from '../components/Article';
+import Branding from '../components/Branding';
+import Bodytext from '../components/Bodytext';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Heading from '../components/Heading';
+import Layout from '../components/Layout';
+import Menu from '../components/Menu';
+import Seo from '../components/Seo';
+import Sidebar from '../components/Sidebar';
+import ArticleFooter from '../components/ArticleFooter';
+import layoutSidebar from '../styles/layoutSidebar';
 
 import config from '../../content/meta/config';
 import menuItems from '../../content/meta/menu';

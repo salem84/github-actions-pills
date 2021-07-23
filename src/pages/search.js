@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Global from '../classy-docs/styles/global';
-import Layout from '../classy-docs/components/Layout';
+import Global from '../styles/global';
+import Layout from '../components/Layout';
 
-import Branding from '../classy-docs/components/Branding';
-import Footer from '../classy-docs/components/Footer';
-import Header from '../classy-docs/components/Header';
-import Menu from '../classy-docs/components/Menu';
-import Seo from '../classy-docs/components/Seo';
+import Branding from '../components/Branding';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Menu from '../components/Menu';
+import Seo from '../components/Seo';
 
 import Search from "../components/search";
 

@@ -1,17 +1,17 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Global from '../classy-docs/styles/global';
+import Global from '../styles/global';
 
-import Article from '../classy-docs/components/Article';
-import Heading from '../classy-docs/components/Heading';
-import Branding from '../classy-docs/components/Branding';
-import Footer from '../classy-docs/components/Footer';
-import Header from '../classy-docs/components/Header';
-import Layout from '../classy-docs/components/Layout';
-import Menu from '../classy-docs/components/Menu';
-import Seo from '../classy-docs/components/Seo';
-import List from '../classy-docs/components/List';
+import Article from '../components/Article';
+import Heading from '../components/Heading';
+import Branding from '../components/Branding';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Layout from '../components/Layout';
+import Menu from '../components/Menu';
+import Seo from '../components/Seo';
+import List from '../components/List';
 
 import config from '../../content/meta/config';
 import menuItems from '../../content/meta/menu';
