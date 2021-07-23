@@ -1,6 +1,6 @@
 const base = {
   name: "Github Actions Pills",
-  url: "https://github.com/salem84/githubactions-pills",
+  url: "https://github.com/salem84/github-actions-pills",
 }
 
 const config = {
