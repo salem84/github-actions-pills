@@ -12,7 +12,7 @@ const ArticleFooter = props => {
   return (
     <div css={[themeStyle, customStyle]}>
       <div>
-          <a href={editOnGithubURL}>Edit on GitHub</a>
+          <a target="_blank" href={editOnGithubURL}>Edit on GitHub</a>
 
         <span>
           {" "}&nbsp; · &nbsp;{" "}

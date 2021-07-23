@@ -19,7 +19,7 @@ const config = {
   siteUrl: base.url,
   // pathPrefix: '',
 
-  contentRepoUrl:  `${base.url}/content`,
+  contentRepoUrl:  `${base.url}/tree/master/content/docs/`,
 }
 
 module.exports = config
