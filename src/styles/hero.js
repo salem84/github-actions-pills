@@ -64,12 +64,25 @@ const hero = css`
     animation: ${pulse} 2s ease infinite;
   }
 
+  .anchor.before {
+    display: none;
+  }
+
+  img {
+    margin-top: 50px;
+    width: 250px;
+  }
+
   @media (hover: hover) {
     a:hover {
       animation: none;
       background: ${colors.firstActiveColor};
       color: #fff;
     }
+  }
+
+  .feather {
+    display: none;
   }
 `;
 

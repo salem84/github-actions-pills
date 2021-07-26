@@ -10,7 +10,8 @@ export const colors = {
     superLightGray: `#ccc`,
 
     textColor: `#555`,
-    lightTextColor:  `#777`,
+    // lightTextColor:  `#777`,
+    lightTextColor: `#24292e`,
     superLightTextColor:  `#aaa`,
 
     linkColor: `#a00`,

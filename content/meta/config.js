@@ -7,13 +7,13 @@ const config = {
   /* meta tags */
   siteTitle: `${base.name}`,
   siteTitlePostfix: ` - ${base.name}`,
-  siteDescription: `${base.name} is a series starters: Minimal, Equipped, Themed, Website, Blog.`,
+  siteDescription: `${base.name} is a repository of Github workflows`,
   siteImage: "preview.jpg",
   siteLanguage: "en",
 
   /* site header */
   headerTitle: `${base.name}`,
-  headerSubTitle: "based on GatsbyJS",
+  headerSubTitle: "Repository for your Github Workflows",
 
   /* url */
   siteUrl: base.url,

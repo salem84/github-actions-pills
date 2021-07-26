@@ -16,7 +16,7 @@ const Hero = props => {
           dangerouslySetInnerHTML={{ __html: html }}
         />
       ) : (
-        <section css={`${themeStyle}`}>{children}</section>
+        <section css={[themeStyle, customStyle]}>{children}</section>
       )}
     </React.Fragment>
   );

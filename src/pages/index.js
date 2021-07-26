@@ -44,8 +44,8 @@ const IndexPage = props => {
         <Menu items={menuItems} />
       </Header>
       <Hero>
-        <Img fluid={logoFluid} className="image" />
         <div dangerouslySetInnerHTML={{ __html: heroHTML }} />
+        {/* <Img fluid={logoFluid} className="image" /> */}
       </Hero> 
       <Footer links={footerLinksHTML} copyright={copyrightHTML} />
       <Seo

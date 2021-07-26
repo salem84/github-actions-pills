@@ -24,10 +24,10 @@ const Footer = props => {
           Greg Lobinski
         */}
         Built with{' '}
-        <a href="https://github.com/greglobinski/gatsby-starter-kit">
-          GatsbyJS Starter Kit
+        <a href="https://www.gatsbyjs.com/">
+          GatsbyJS
         </a>{' '}
-        | Design by{' '}
+        | Based on{' '}
         <a href="https://github.com/greglobinski/react-website-themes">
           React Website Themes
         </a>.
