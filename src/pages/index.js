@@ -11,9 +11,11 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Menu from '../components/Menu';
 import Seo from '../components/Seo';
+import CategoriesBox from '../components/CategoriesListbox';
 
 import config from '../../content/meta/config';
 import menuItems from '../../content/meta/menu';
+import categoryList from '../../content/meta/categories';
 
 const IndexPage = props => {
   const {
@@ -47,6 +49,7 @@ const IndexPage = props => {
         <div dangerouslySetInnerHTML={{ __html: heroHTML }} />
         {/* <Img fluid={logoFluid} className="image" /> */}
       </Hero> 
+      <CategoriesBox categoryList={categoryList} />
       <Footer links={footerLinksHTML} copyright={copyrightHTML} />
       <Seo
         url={siteUrl}
