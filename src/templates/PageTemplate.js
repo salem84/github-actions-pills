@@ -17,12 +17,13 @@ import Menu from '../components/Menu';
 import Seo from '../components/Seo';
 import Sidebar from '../components/Sidebar';
 import ArticleFooter from '../components/ArticleFooter';
+import Search from '../components/Search';
+
 import layoutSidebar from '../styles/layoutSidebar';
 
 import config from '../../content/meta/config';
 import menuItems from '../../content/meta/menu';
 import categoryList from '../../content/meta/categories';
-// import Search from '../components/search';
 
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
@@ -70,8 +71,8 @@ const PageTemplate = props => {
       <Layout themeStyle={layoutStyle}>
         <Header>
           {/* <Branding title={headerTitle} subTitle={headerSubTitle} /> */}
+          <Search />
           <Menu items={menuItems} />
-          {/* <Search /> */}
         </Header>
         <Article>
           <Heading title={title} />

@@ -30,7 +30,7 @@ const queries = [
   {
     query: docsQuery,
     transformer: ({ data }) => flatten(data.docs.edges),
-    indexName: `Docs`,
+    indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
     settings,
   },
 ]
