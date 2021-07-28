@@ -1,13 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
+import { css } from "@emotion/react";
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
+
+const themeStyle = css`
+    margin: 0 0 20px 0;
+    padding: 20px;
+    list-style: circle;
+    
+    & li {
+        padding: 5px 0;
+    }
+`;
+
 
 const List = props => {
   const { edges, theme } = props;
 
   return (
     <React.Fragment>
-      <ul>
+      <ul css={[themeStyle]}>
         {edges.map(edge => {
           const {
             node: {
@@ -26,7 +40,7 @@ const List = props => {
 
       {/* --- STYLES --- */}
       <style jsx>{`
-        ul {
+        /* ul {
             margin: 0 0 20px 0;
             padding: 20px;
             list-style: circle;
@@ -34,7 +48,7 @@ const List = props => {
           li {
             padding: 5px 0;
             
-          }
+          } */
       `}</style>
     </React.Fragment>
   );

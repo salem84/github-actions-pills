@@ -15,9 +15,9 @@ const CategoriesListbox = props => {
       <div className="grid">
         {
           categoryList.map(item => {
-            const { label, to, icon: Icon, external, linkProps } = item;
+            const { label, name: to, icon: Icon, external, linkProps } = item;
             return (
-              <Link to={to}>{label}</Link>
+              <Link to={`categories/${to}`}>{label}</Link>
               )
           })
         }

@@ -4,8 +4,8 @@ import React from 'react';
 import TagIcon from 'react-feather/dist/icons/tag';
 
 import 'prismjs/themes/prism-okaidia.css';
-// import '@react-website-themes/default/styles/variables';
-// import '@react-website-themes/default/styles/global';
+import Global from '../styles/global';
+
 
 import Article from '../components/Article';
 import Branding from '../components/Branding';
@@ -23,6 +23,7 @@ import Search from '../components/Search';
 
 import config from '../../content/meta/config';
 import menu from '../../content/meta/menu';
+import categoryList from '../../content/meta/categories';
 
 const PageTemplate = props => {
   const {
@@ -34,7 +35,6 @@ const PageTemplate = props => {
     },
   } = props;
 
-  const items = edges;//edges.map(edge => edge.node);
 
   const {
     headerTitle,
@@ -46,32 +46,35 @@ const PageTemplate = props => {
     siteImage,
   } = config;
 
+  const title = categoryList.filter(item => item.name === category).map(item => item.label);
+
   return (
     <Layout>
-      <Header>
-        <Branding title={headerTitle} subTitle={headerSubTitle} />
-        <Menu items={menu} />
-      </Header>
-      <Article>
-        <Heading>
-          <span>Posts in category</span> <TagIcon />
-          <h1>{category}</h1>
-          <p className="meta">
-            There {totalCount > 1 ? 'are' : 'is'} <strong>{totalCount}</strong>{' '}
-            post
-            {totalCount > 1 ? 's' : ''} in the category.
-          </p>
-        </Heading>
-        <List edges={items} />
-      </Article>
-      <Footer links={footerLinksHTML} copyright={copyrightHTML} />
-      <Seo
-        url={`${siteUrl}/categories/${category}/`}
-        language={siteLanguage}
-        title={`Posts in category: ${category}${siteTitlePostfix}`}
-        description={siteDescription}
-        image={siteImage}
-      />
+        <Global />
+        <Header>
+            <Branding title={headerTitle} subTitle={headerSubTitle} />
+            <Menu items={menu} />
+        </Header>
+        <Article>
+            <Heading>
+            {/* <span>Pills in category</span> */}
+            <h1>{title}</h1>
+            <p className="meta">
+                There {totalCount > 1 ? 'are' : 'is'} <strong>{totalCount}</strong>{' '}
+                pill
+                {totalCount > 1 ? 's' : ''} in this category.
+            </p>
+            </Heading>
+            <List edges={edges} />
+        </Article>
+        <Footer links={footerLinksHTML} copyright={copyrightHTML} />
+        <Seo
+            url={`${siteUrl}/categories/${category}/`}
+            language={siteLanguage}
+            title={`Pills in category: ${category}${siteTitlePostfix}`}
+            description={siteDescription}
+            image={siteImage}
+        />
     </Layout>
   );
 };
