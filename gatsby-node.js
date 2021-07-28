@@ -1,4 +1,5 @@
 const path = require('path');
+const _ = require("lodash");
 const Promise = require('bluebird');
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
@@ -69,6 +70,8 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const pageTemplate = path.resolve('./src/templates/PageTemplate.js');
+    const categoryTemplate = path.resolve('./src/templates/CategoryTemplate.js');
+
 
     resolve(
       graphql(`
@@ -117,8 +120,19 @@ exports.createPages = ({ graphql, actions }) => {
           }
         });
 
-        // console.log("ciao");
-        // console.log(JSON.stringify(categorySet, null, 4));
+        // Create category pages
+        const categoryList = Array.from(categorySet);
+        categoryList.forEach(category => {
+          createPage({
+            path: `/categories/${_.kebabCase(category)}/`,
+            component: categoryTemplate,
+            context: {
+              category,
+            },
+          });
+        });
+
+        console.log("ciao");
 
         // create pages
         items.forEach(({ node }) => {

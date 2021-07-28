@@ -1,90 +1,48 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
-
-import style from '../styles/list';
-
-function organizePagesInCategories(pages, categoryList) {
-  return pages.reduce(
-    (categoryContainers, currItem) => {
-      const {
-        frontmatter: { categories: currItemCategories },
-      } = currItem;
-
-      let pairedCategory = currItemCategories.reduce((pairedCat, currCat) => {
-        if (
-          pairedCat === '' &&
-          categoryList.find(
-            categoryListItem => categoryListItem.name === currCat
-          )
-        ) {
-          return currCat;
-        } else {
-          return pairedCat;
-        }
-      }, '');
-
-      if (pairedCategory) {
-        const categoryContainer = categoryContainers.find(
-          categoryContainer => categoryContainer.name === pairedCategory
-        );
-
-        categoryContainer.pages.push(currItem);
-      }
-      return categoryContainers;
-    },
-    categoryList.map(category => {
-      category.pages = [];
-      return category;
-    })
-  );
-}
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "gatsby-link";
 
 const List = props => {
-  const { pages, categoryList, themeStyle = style, customStyle = '' } = props;
-
-  const pagesInCategories = organizePagesInCategories(pages, categoryList);
+  const { edges, theme } = props;
 
   return (
-    <div css={[themeStyle, customStyle]}>
-      {pagesInCategories.map(category => {
-        const { label, icon: Icon } = category;
+    <React.Fragment>
+      <ul>
+        {edges.map(edge => {
+          const {
+            node: {
+              frontmatter: { title },
+              fields: { slug }
+            }
+          } = edge;
 
-        return (
-          <React.Fragment key={label}>
-            <h3>
-              <Icon />
-              {label}
-            </h3>
-            <ul>
-              {category.pages.map(page => {
-                const {
-                  frontmatter: { title, shortTitle },
-                  fields: { slug },
-                } = page;
-                return (
-                  <li key={slug}>
-                    <Link key={slug} to={slug}>
-                      {shortTitle ? shortTitle : title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </React.Fragment>
-        );
-      })}
-    </div>
+          return (
+            <li key={slug}>
+              <Link to={slug}>{title}</Link>
+            </li>
+          );
+        })}
+      </ul>
+
+      {/* --- STYLES --- */}
+      <style jsx>{`
+        ul {
+            margin: 0 0 20px 0;
+            padding: 20px;
+            list-style: circle;
+          }
+          li {
+            padding: 5px 0;
+            
+          }
+      `}</style>
+    </React.Fragment>
   );
 };
 
 List.propTypes = {
-  pages: PropTypes.array.isRequired,
-  categoryList: PropTypes.array,
-  themeStyle: PropTypes.string,
-  customStyle: PropTypes.string,
+  edges: PropTypes.array.isRequired,
+  theme: PropTypes.object
 };
 
 export default List;

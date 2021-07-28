@@ -11,7 +11,7 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import Menu from '../components/Menu';
 import Seo from '../components/Seo';
-import List from '../components/List';
+import ListPages from '../components/ListPages';
 
 import config from '../../content/meta/config';
 import menuItems from '../../content/meta/menu';
@@ -45,8 +45,8 @@ const ContentPage = props => {
         <Menu items={menuItems} />
       </Header>
       <Article>
-        <Heading title="Table of content" />
-        <List pages={pages} categoryList={categoryList} />
+        <Heading title="All Content" />
+        <ListPages pages={pages} categoryList={categoryList} />
       </Article>
       <Footer links={footerLinksHTML} copyright={copyrightHTML} />
       <Seo
