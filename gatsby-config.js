@@ -51,7 +51,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
-    `gatsby-transformer-gitinfo`,
+    {
+      //@colliercz aggiungere
+      resolve: `gatsby-transformer-gitinfo`,
+      options: {
+        include: /\.md$/i
+      }
+    },
     {
       resolve: `gatsby-plugin-algolia`,
       options: {

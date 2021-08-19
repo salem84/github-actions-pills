@@ -10,7 +10,7 @@ This workflow uses an Ubuntu agent to build a DocFx site and publish content dir
 ## Variables & Secrets
 
 | Type | Name | Description |
-|------|------|-------------------|
+|------|------|-------------|
 | Secret | GITHUB_TOKEN | Generated automatically |
 
 ## Pipeline

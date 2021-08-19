@@ -4,7 +4,7 @@ import TimeAgo from "react-timeago"
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 
-const ArticleFooter = props => {
+const ArticleEdit = props => {
   const { lastEdit, contentRepoUrl, relativeDirectory, themeStyle, customStyle = '' } = props;
 
   const editOnGithubURL = `${contentRepoUrl}/${relativeDirectory}`
@@ -27,7 +27,7 @@ const ArticleFooter = props => {
   );
 };
 
-ArticleFooter.propTypes = {
+ArticleEdit.propTypes = {
   lastEdit: PropTypes.string,
   contentRepoUrl: PropTypes.string,
   relativeDirectory: PropTypes.string,
@@ -35,4 +35,4 @@ ArticleFooter.propTypes = {
   customStyle: PropTypes.string,
 };
 
-export default ArticleFooter;
+export default ArticleEdit;
