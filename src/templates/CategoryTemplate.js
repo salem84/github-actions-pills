@@ -18,7 +18,6 @@ import Menu from '../components/Menu';
 import Seo from '../components/Seo';
 import List from '../components/List';
 import Sidebar from '../components/Sidebar';
-import ArticleFooter from '../components/ArticleFooter';
 import Search from '../components/Search';
 
 import config from '../../content/meta/config';

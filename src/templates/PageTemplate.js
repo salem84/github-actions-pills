@@ -16,7 +16,8 @@ import Layout from '../components/Layout';
 import Menu from '../components/Menu';
 import Seo from '../components/Seo';
 import Sidebar from '../components/Sidebar';
-import ArticleFooter from '../components/ArticleFooter';
+import ArticleAuthor from '../components/ArticleAuthor';
+import ArticleEdit from '../components/ArticleEdit';
 import Search from '../components/Search';
 
 import layoutSidebar from '../styles/layoutSidebar';
@@ -36,7 +37,7 @@ const PageTemplate = props => {
         html: pageHTML,
         frontmatter: { title },
         fields: { slug, source },
-        parent: { relativeDirectory, fields: { gitLogLatestDate } },
+        parent: { relativeDirectory, fields: { gitLogLatestDate, gitLogLatestAuthorEmail, gitLogLatestAuthorName } = {} },
         excerpt,
       },
       pages: { edges: nodePages },
@@ -77,7 +78,8 @@ const PageTemplate = props => {
         <Article>
           <Heading title={title} />
           <Bodytext html={pageHTML} />
-          <ArticleFooter lastEdit={gitLogLatestDate} contentRepoUrl={config.contentRepoUrl} relativeDirectory={relativeDirectory} />
+          <ArticleAuthor authorUsername={gitLogLatestAuthorName} />
+          <ArticleEdit lastEdit={gitLogLatestDate} contentRepoUrl={config.contentRepoUrl} relativeDirectory={relativeDirectory} />
         </Article>
         <Footer links={footerLinksHTML} copyright={copyrightHTML} />
         <Seo
@@ -117,6 +119,8 @@ export const query = graphql`
         ... on File {
           relativeDirectory
           fields {
+            gitLogLatestAuthorName
+            gitLogLatestAuthorEmail
             gitLogLatestDate
           }
         }
