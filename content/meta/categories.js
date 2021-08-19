@@ -8,6 +8,7 @@ export const categories = [
   // { name: 'devops', label: 'DevOps', icon: GitBranchIcon },
   { name: 'azure', label: 'Azure', icon: CloudIcon },
   { name: 'iac', label: 'Infrastructure As Code', icon: SettingsIcon },
+  { name: 'frontend', label: 'Frontend', icon: FolderPlusIcon},
   // { name: 'scripts', label: 'Scripts', icon: ImageIcon },
   // { name: 'tools', label: 'Tools', icon: FolderPlusIcon },
   // { name: 'hacking', label: 'Hacking', icon: SettingsIcon },
