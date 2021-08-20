@@ -121,6 +121,22 @@ const bodytext = css`
       margin-bottom: 0;
     }
   }
+
+  table {
+    border: 1px solid #efefef;
+    border-spacing: 0;
+    width: 100%;
+
+    & th {
+    }
+    
+    & tbody tr:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+    & td {
+      text-align: center;
+    }
+  }
 `;
 
 export default bodytext;
