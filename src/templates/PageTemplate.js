@@ -19,6 +19,7 @@ import Sidebar from '../components/Sidebar';
 import ArticleAuthor from '../components/ArticleAuthor';
 import ArticleEdit from '../components/ArticleEdit';
 import Search from '../components/Search';
+import PipelineAgents from '../components/PipelineAgents';
 
 import layoutSidebar from '../styles/layoutSidebar';
 
@@ -28,6 +29,7 @@ import categoryList from '../../content/meta/categories';
 
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
+import Discussions from '../components/Discussions';
 
 const PageTemplate = props => {
   const {
@@ -35,7 +37,7 @@ const PageTemplate = props => {
     data: {
       page: {
         html: pageHTML,
-        frontmatter: { title },
+        frontmatter: { title, agents },
         fields: { slug, source },
         parent: { relativeDirectory, fields: { gitLogLatestDate, gitLogLatestAuthorEmail, gitLogLatestAuthorName } = {} },
         excerpt,
@@ -78,8 +80,10 @@ const PageTemplate = props => {
         <Article>
           <Heading title={title} />
           <Bodytext html={pageHTML} />
+          <PipelineAgents agentList={agents}/>
           <ArticleAuthor authorUsername={gitLogLatestAuthorName} />
           <ArticleEdit lastEdit={gitLogLatestDate} contentRepoUrl={config.contentRepoUrl} relativeDirectory={relativeDirectory} />
+          <Discussions />
         </Article>
         <Footer links={footerLinksHTML} copyright={copyrightHTML} />
         <Seo
@@ -114,6 +118,7 @@ export const query = graphql`
       frontmatter {
         title
         categories
+        agents
       }
       parent {
         ... on File {
