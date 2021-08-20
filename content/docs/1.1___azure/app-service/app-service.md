@@ -4,4 +4,4 @@ categories: ['azure']
 agents: ['ubuntu']
 ---
 
-## Deploy to Azure App Service
+TBD
