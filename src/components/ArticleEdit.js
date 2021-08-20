@@ -2,10 +2,14 @@ import PropTypes from 'prop-types';
 import TimeAgo from "react-timeago"
 
 /** @jsx jsx */
-import { jsx } from '@emotion/react'
+import { css, jsx } from '@emotion/react'
+
+const style = css`
+  margin-bottom: 30px;
+`;
 
 const ArticleEdit = props => {
-  const { lastEdit, contentRepoUrl, relativeDirectory, themeStyle, customStyle = '' } = props;
+  const { lastEdit, contentRepoUrl, relativeDirectory, themeStyle = style, customStyle = '' } = props;
 
   const editOnGithubURL = `${contentRepoUrl}/${relativeDirectory}`
 

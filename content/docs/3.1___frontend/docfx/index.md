@@ -5,7 +5,7 @@ agents: ['ubuntu']
 ---
 
 ## Summary
-This workflow uses an Ubuntu agent to build a DocFx site and publish content directly to GitHub Pages branch
+This workflow uses an Ubuntu agent to build a DocFx site and publish content directly to GitHub Pages branch.
 
 ## Variables & Secrets
 
