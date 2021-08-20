@@ -52,8 +52,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
     {
-      //@colliercz aggiungere
-      resolve: `gatsby-transformer-gitinfo`,
+      //aggiungere
+      resolve: `@colliercz/gatsby-transformer-gitinfo`,
       options: {
         include: /\.md$/i
       }
