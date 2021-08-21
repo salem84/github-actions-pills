@@ -134,6 +134,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
+              showLineNumbers: true,
               aliases: {
                 sh: "shell",
                 cmd: "shell",
