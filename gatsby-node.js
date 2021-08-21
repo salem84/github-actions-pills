@@ -7,6 +7,21 @@ const { execSync } = require("child_process")
 
 const SLUG_SEPARATOR = '___';
 
+exports.createSchemaCustomization =({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+
+    type Frontmatter {
+      agents: [AgentsYaml] @link
+    }
+  `
+  // Following this method, link works correctly but does not return image (AgentsYaml schema is wrong)
+  // createTypes(typeDefs);
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
@@ -132,7 +147,7 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
 
-        console.log("ciao");
+        console.log("Creating pages...");
 
         // create pages
         items.forEach(({ node }) => {

@@ -1,0 +1,7 @@
+- id: ubuntu
+  type: Linux
+  icon: ../images/agents/linux_med.png
+
+- id: win-2016
+  type: Windows
+  icon: ../images/agents/win_med.png

@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react'
-import React from 'react';
+import React from 'react'
+import Image from 'gatsby-image'
 
-import agentDetails from '../../content/meta/agents';
+// import agentDetails from '../../content/meta/agents';
 
 const style = css`
   margin-bottom: 30px;
@@ -26,18 +27,27 @@ const PipelineAgents = props => {
     //     }
     // });
 
-    const agents = agentList?.map(item => {
-        return agentDetails.find(agent => agent.name === item);
-    });
+    // const agents = agentList?.map(item => {
+    //     return agentDetails.find(agent => agent.name === item);
+    // });
 
     return (
       
         <div css={[themeStyle, customStyle]}>
             <h3>Pipeline Agents</h3>
             <div className="agents">
-                { agents && (agents.length > 0) ? ( 
-                    agents.map(item => {
-                        return (<img className="agent-image" src={`agent-${item.type}`} alt={item.name} />)
+                { agentList && (agentList.length > 0) ? ( 
+                    agentList.map(agent => {
+                        // TODO: set width on GraphQL
+                        return (
+                            <Image 
+                            fluid={agent.icon.childImageSharp.fluid}
+                            alt={agent.id}
+                            style={{
+                                width: 40
+                            }}
+                            />
+                        )
                     })
                     ) : (  
                         <span>Not specified</span>
