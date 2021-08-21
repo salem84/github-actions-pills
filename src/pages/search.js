@@ -10,7 +10,7 @@ import Header from '../components/Header';
 import Menu from '../components/Menu';
 import Seo from '../components/Seo';
 
-import Search from "../components/search";
+import Search from "../components/Search";
 
 import config from '../../content/meta/config';
 import menuItems from '../../content/meta/menu';
