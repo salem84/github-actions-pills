@@ -11,14 +11,17 @@ module.exports = {
   siteMetadata: {
     title: `Title from siteMetadata`,
   },
+  /* Mapping */
+  mapping: {
+    'MarkdownRemark.frontmatter.agents': `AgentsYaml`,
+  },
   plugins: [
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `markdown-pages`,
-    //     path: `${__dirname}/src/content`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-transformer-yaml`,
+      options: {
+        // typeName: `datayaml`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,6 +48,14 @@ module.exports = {
       options: {
         name: `docs`,
         path: `${__dirname}/content/docs/`,
+        ignore: [`**/*.yaml`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `metadata`,
+        path: `${__dirname}/content/meta/`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -52,7 +63,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
     {
-      //aggiungere
       resolve: `@colliercz/gatsby-transformer-gitinfo`,
       options: {
         include: /\.md$/i

@@ -118,7 +118,17 @@ export const query = graphql`
       frontmatter {
         title
         categories
-        agents
+        agents {
+          id
+          type
+          icon {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
       parent {
         ... on File {
