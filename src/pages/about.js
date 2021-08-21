@@ -3,25 +3,23 @@ import { graphql } from 'gatsby';
 
 import Global from '../styles/global';
 
-import Article from '../components/Article';
-import Heading from '../components/Heading';
 import Branding from '../components/Branding';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Heading from '../components/Heading';
+import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Menu from '../components/Menu';
 import Seo from '../components/Seo';
-import ListPages from '../components/ListPages';
 
 import config from '../../content/meta/config';
 import menuItems from '../../content/meta/menu';
-import categoryList from '../../content/meta/categories';
 
-const ContentPage = props => {
+const AboutPage = props => {
   const {
     data: {
-      pages: { edges: rawPages },
       footerLinks: { html: footerLinksHTML },
+      about: { html: aboutHTML },
       copyright: { html: copyrightHTML },
     },
   } = props;
@@ -35,8 +33,6 @@ const ContentPage = props => {
     siteLanguage,
   } = config;
 
-  const pages = rawPages.map(page => page.node);
-
   return (
     <Layout>
       <Global />
@@ -45,9 +41,9 @@ const ContentPage = props => {
         <Menu items={menuItems} />
       </Header>
       <Article>
-        <Heading title="All Pills" />
-        <ListPages pages={pages} categoryList={categoryList} />
-      </Article>
+        <Heading title="About" />
+        <div dangerouslySetInnerHTML={{ __html: aboutHTML }} />
+      </Article> 
       <Footer links={footerLinksHTML} copyright={copyrightHTML} />
       <Seo
         url={siteUrl}
@@ -59,31 +55,15 @@ const ContentPage = props => {
   );
 };
 
-export default ContentPage;
+export default AboutPage;
 
 export const query = graphql`
   query {
-    pages: allMarkdownRemark(
-      filter: { fields: { source: { eq: "docs" } } }
-      sort: { fields: [fields___prefix] }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            prefix
-          }
-          frontmatter {
-            title
-            shortTitle
-            categories
-          }
-        }
-      }
-    }
-    hero: markdownRemark(fileAbsolutePath: { regex: "/content/parts/hero/" }) {
+    
+    about: markdownRemark(fileAbsolutePath: { regex: "/content/parts/about/" }) {
       html
     }
+
     footerLinks: markdownRemark(
       fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
     ) {
@@ -96,3 +76,5 @@ export const query = graphql`
     }
   }
 `;
+
+

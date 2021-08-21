@@ -4,7 +4,8 @@ import InfoIcon from 'react-feather/dist/icons/info';
 
 const menu = [
   { label: 'Home', to: '/', icon: HomeIcon },
-  { label: 'Contents', to: '/content', icon: ListIcon },
+  { label: 'Pills', to: '/content', icon: ListIcon },
+  { label: 'About', to: '/about', icon: InfoIcon },
   // { label: 'Search', to: '/search', icon: InfoIcon }
 ];
 
