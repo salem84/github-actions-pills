@@ -3,22 +3,31 @@ import PropTypes from 'prop-types';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 import React from 'react'
+import { Link } from 'gatsby';
 
 const style = css`
+    margin-bottom: 30px;
 
+    .tags {
+        margin-top: 15px;
+    }
+
+    .tags a {
+        border-radius: 15px;
+        padding: 5px 12px;
+        margin-bottom: 6px;
+        text-decoration: none;
+        border: 1px solid #eee;
+        margin-left: 5px;
+    }
+
+    .tags a:hover {
+        background-color: #eee;
+    }
 `;
 
 const ArticleTags = props => {
     const { tagList, themeStyle = style, customStyle = '' } = props;
-    // const agents = agentList?.reduce((a, curItem) => {
-    //     if(agentDetails.find(agent => agent.name === curItem)) {
-    //         return agent;
-    //     }
-    // });
-
-    // const agents = agentList?.map(item => {
-    //     return agentDetails.find(agent => agent.name === item);
-    // });
 
     return (
       
@@ -28,7 +37,7 @@ const ArticleTags = props => {
                 { tagList && (tagList.length > 0) ? ( 
                     tagList.map(tag => {
                         return (
-                            <span>{tag}</span>
+                            <Link to={`/tags/${tag}`}>{tag}</Link>
                         )
                     })
                     ) : (  

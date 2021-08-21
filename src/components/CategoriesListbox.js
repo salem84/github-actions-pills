@@ -1,10 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 /** @jsx jsx */
-import { jsx } from '@emotion/react'
+import { css, jsx } from '@emotion/react'
 
-import style from '../styles/categoriesListbox';
 import { Link } from 'gatsby';
+
+const style=css`
+    text-align: center;
+
+    h2 {
+        
+    }
+
+    .grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .grid a {
+      border-radius: 15px;
+      padding: 10px 12px;
+      margin-bottom: 6px;
+      text-decoration: none;
+      border: 1px solid #eee;
+      margin-left: 5px;
+    }
+
+    .grid a:hover {
+        background-color: #eee;
+    }
+`;
 
 const CategoriesListbox = props => {
   const { categoryList, themeStyle = style, customStyle = '' } = props;
@@ -17,7 +44,7 @@ const CategoriesListbox = props => {
           categoryList.map(item => {
             const { label, name: to, icon: Icon, external, linkProps } = item;
             return (
-              <Link to={`categories/${to}`}>{label}</Link>
+              <Link to={`/categories/${to}`}>{label}</Link>
               )
           })
         }

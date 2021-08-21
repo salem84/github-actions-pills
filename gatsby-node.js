@@ -86,6 +86,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const pageTemplate = path.resolve('./src/templates/PageTemplate.js');
     const categoryTemplate = path.resolve('./src/templates/CategoryTemplate.js');
+    const tagTemplate = path.resolve('./src/templates/TagTemplate.js');
 
 
     resolve(
@@ -106,6 +107,7 @@ exports.createPages = ({ graphql, actions }) => {
                 frontmatter {
                   title
                   categories
+                  tags
                 }
               }
             }
@@ -146,6 +148,37 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
+
+        console.log("Creating tags pages...");
+
+        const tagSet = new Set();
+        // Create category list
+        items.forEach(edge => {
+          const {
+            node: {
+              frontmatter: { tags },
+            },
+          } = edge;
+
+          if (tags) {
+            tags.forEach(tag => {
+              tagSet.add(tag);
+            });
+          }
+        });
+
+        // Create category pages
+        const tagList = Array.from(tagSet);
+        tagList.forEach(tag => {
+          createPage({
+            path: `/tags/${_.kebabCase(tag)}/`,
+            component: tagTemplate,
+            context: {
+              tag,
+            },
+          });
+        });
+
 
         console.log("Creating pages...");
 
