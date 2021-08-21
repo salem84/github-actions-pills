@@ -5,8 +5,6 @@ import { css, jsx } from '@emotion/react'
 import React from 'react'
 import Image from 'gatsby-image'
 
-// import agentDetails from '../../content/meta/agents';
-
 const style = css`
   margin-bottom: 30px;
 
@@ -19,7 +17,7 @@ const style = css`
   }
 `;
 
-const PipelineAgents = props => {
+const ArticleAgents = props => {
     const { agentList, themeStyle = style, customStyle = '' } = props;
     // const agents = agentList?.reduce((a, curItem) => {
     //     if(agentDetails.find(agent => agent.name === curItem)) {
@@ -60,10 +58,10 @@ const PipelineAgents = props => {
   
 };
 
-PipelineAgents.propTypes = {
+ArticleAgents.propTypes = {
   agentList: PropTypes.array,
   themeStyle: PropTypes.string,
   customStyle: PropTypes.string,
 };
 
-export default PipelineAgents;
+export default ArticleAgents;
