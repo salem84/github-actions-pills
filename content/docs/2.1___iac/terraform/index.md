@@ -1,5 +1,5 @@
 ---
-title: "Iac Terraform Sample"
+title: "Iac Terraform"
 shortTitle: Terraform
 categories: ['iac']
 published: 2021-01-01
