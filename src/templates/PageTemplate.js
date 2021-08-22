@@ -32,6 +32,12 @@ import categoryList from '../../content/meta/categories';
 import { jsx } from '@emotion/react'
 import Discussions from '../components/Discussions';
 
+const DEFAULT_GIT_FIELDS = {
+  gitLogLatestDate: Date.now(),
+  gitLogLatestAuthorName: 'UnknownUser',
+  gitLogLatestAuthorEmail: 'unknown@nomail.it'
+}
+
 const PageTemplate = props => {
   const {
     location: { pathname },
@@ -40,7 +46,7 @@ const PageTemplate = props => {
         html: pageHTML,
         frontmatter: { title, agents, tags },
         fields: { slug, source },
-        parent: { relativeDirectory, fields: { gitLogLatestDate, gitLogLatestAuthorEmail, gitLogLatestAuthorName } = {} },
+        parent: { relativeDirectory, fields: fields },
         excerpt,
       },
       pages: { edges: nodePages },
@@ -48,6 +54,9 @@ const PageTemplate = props => {
       copyright: { html: copyrightHTML },
     },
   } = props;
+
+  // So avoid errors on new post without Git information
+  const { gitLogLatestDate, gitLogLatestAuthorEmail, gitLogLatestAuthorName } = fields || DEFAULT_GIT_FIELDS;
 
   const {
     headerTitle,
