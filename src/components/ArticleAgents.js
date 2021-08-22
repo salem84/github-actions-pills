@@ -39,9 +39,9 @@ const ArticleAgents = props => {
                     agentList.map(agent => {
                         // TODO: set width on GraphQL
                         return (
-                            <Image 
+                            <Image key={agent.id}
                             fluid={agent.icon.childImageSharp.fluid}
-                            alt={agent.id}
+                            // alt={agent.id}
                             style={{
                                 width: 40
                             }}

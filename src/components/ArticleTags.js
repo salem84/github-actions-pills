@@ -37,7 +37,7 @@ const ArticleTags = props => {
                 { tagList && (tagList.length > 0) ? ( 
                     tagList.map(tag => {
                         return (
-                            <Link to={`/tags/${tag}`}>{tag}</Link>
+                            <Link key={tag} to={`/tags/${tag}`}>{tag}</Link>
                         )
                     })
                     ) : (  

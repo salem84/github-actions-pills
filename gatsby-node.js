@@ -121,6 +121,8 @@ exports.createPages = ({ graphql, actions }) => {
 
         const items = result.data.allMarkdownRemark.edges;
 
+        console.log("Creating categories pages...");
+        
         const categorySet = new Set();
         // Create category list
         items.forEach(edge => {
