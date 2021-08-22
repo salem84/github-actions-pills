@@ -90,7 +90,7 @@ export const query = graphql`
     posts: allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___prefix], order: DESC }
-      filter: { frontmatter: { categories: { eq: $category } } }
+      filter: { frontmatter: { category: { eq: $category } } }
     ) {
       totalCount
       edges {
@@ -102,7 +102,7 @@ export const query = graphql`
           timeToRead
           frontmatter {
             title
-            categories
+            category
           }
         }
       }

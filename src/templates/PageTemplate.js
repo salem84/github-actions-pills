@@ -119,7 +119,7 @@ export const query = graphql`
       }
       frontmatter {
         title
-        categories
+        category
         tags
         agents {
           id
@@ -157,7 +157,7 @@ export const query = graphql`
           frontmatter {
             title
             shortTitle
-            categories
+            category
           }
           headings {
             value

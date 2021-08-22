@@ -1,14 +1,9 @@
 ---
 title: "Iac Terraform"
 shortTitle: Terraform
-categories: ['iac']
+category: ['iac']
 published: 2021-01-01
 updated: 2021-05-04
-category:
-  name: Iac
-  desc: Infrastructure As Code
-  image: /assets/iac.gif
-  color: rgb(255, 87, 51)
 tags:
   - "iac"
   - "terraform"

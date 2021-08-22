@@ -106,7 +106,7 @@ exports.createPages = ({ graphql, actions }) => {
                 }
                 frontmatter {
                   title
-                  categories
+                  category
                   tags
                 }
               }
@@ -126,12 +126,12 @@ exports.createPages = ({ graphql, actions }) => {
         items.forEach(edge => {
           const {
             node: {
-              frontmatter: { categories },
+              frontmatter: { category },
             },
           } = edge;
 
-          if (categories) {
-            categories.forEach(category => {
+          if (category) {
+            category.forEach(category => {
               categorySet.add(category);
             });
           }

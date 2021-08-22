@@ -1,5 +1,5 @@
 ---
 title: Build NuxtJs application
 shortTitle: NuxtJs
-categories: ['frontend']
+category: ['frontend']
 ---

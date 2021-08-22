@@ -1,7 +1,7 @@
 ---
 title: Deploy to Azure App Service
 shortTitle: App Service
-categories: ['azure']
+category: ['azure']
 agents: ['ubuntu']
 ---
 

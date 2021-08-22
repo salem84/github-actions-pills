@@ -10,7 +10,7 @@ function organizePagesInCategories(pages, categoryList) {
   return pages.reduce(
     (categoryContainers, currItem) => {
       const {
-        frontmatter: { categories: currItemCategories },
+        frontmatter: { category:currItemCategories },
       } = currItem;
 
       let pairedCategory = currItemCategories.reduce((pairedCat, currCat) => {
