@@ -2,7 +2,8 @@
 title: DocFx site
 shortTitle: DocFx
 category: frontend
-agents: ['ubuntu']
+agents: 
+  - ubuntu
 ---
 
 This workflow uses an Ubuntu agent to build a DocFx site and publish content directly to GitHub Pages branch.

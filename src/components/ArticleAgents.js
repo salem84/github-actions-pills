@@ -10,6 +10,7 @@ const style = css`
 
   .agents {
       margin-top: 10px;
+      display: flex;
   }
 
   .agent-image {
