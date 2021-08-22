@@ -20,10 +20,14 @@ const config = {
   // pathPrefix: '',
 
   contentRepoUrl:  `${base.url}/tree/master/content/docs/`,
-   
+
+  comment: {
+    utterances: 'salem84/github-actions-pills', // Repository for archive comment
+  },
   share: {
     facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
   },
+  ga: '0', // Add your google analytics tranking ID
 }
 
 module.exports = config
