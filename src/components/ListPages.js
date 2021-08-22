@@ -55,13 +55,13 @@ const List = props => {
   return (
     <div css={[themeStyle, customStyle]}>
       {pagesInCategories.map(category => {
-        const { label, icon: Icon } = category;
+        const { label, name, icon: Icon } = category;
 
         return (
           <React.Fragment key={label}>
             <h3>
               <Icon />
-              {label}
+              <Link to={`/categories/${name}`}>{label}</Link>
             </h3>
             <ul>
               {category.pages.map(page => {
