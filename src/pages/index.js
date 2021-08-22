@@ -20,9 +20,7 @@ import categoryList from '../../content/meta/categories';
 const IndexPage = props => {
   const {
     data: {
-      footerLinks: { html: footerLinksHTML },
       hero: { html: heroHTML },
-      copyright: { html: copyrightHTML },
       logo: {
         childImageSharp: { fluid: logoFluid },
       },
@@ -50,7 +48,7 @@ const IndexPage = props => {
         {/* <Img fluid={logoFluid} className="image" /> */}
       </Hero> 
       <CategoriesBox categoryList={categoryList} />
-      <Footer links={footerLinksHTML} copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={siteUrl}
         language={siteLanguage}
@@ -76,17 +74,6 @@ export const query = graphql`
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
-    }
-
-    footerLinks: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
-    ) {
-      html
-    }
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
-      html
     }
   }
 `;

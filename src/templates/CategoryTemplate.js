@@ -29,11 +29,8 @@ const PageTemplate = props => {
     pageContext: { category },
     data: {
       posts: { totalCount, edges },
-      footerLinks: { html: footerLinksHTML },
-      copyright: { html: copyrightHTML },
     },
   } = props;
-
 
   const {
     headerTitle,
@@ -66,7 +63,7 @@ const PageTemplate = props => {
             </Heading>
             <List edges={edges} />
         </Article>
-        <Footer links={footerLinksHTML} copyright={copyrightHTML} />
+        <Footer />
         <Seo
             url={`${siteUrl}/categories/${category}/`}
             language={siteLanguage}
@@ -106,16 +103,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    footerLinks: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
-    ) {
-      html
-    }
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
-      html
     }
   }
 `;

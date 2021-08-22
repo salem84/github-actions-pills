@@ -18,8 +18,6 @@ import menuItems from '../../content/meta/menu';
 const SearchPage = props => {
   const {
     data: {
-      footerLinks: { html: footerLinksHTML },
-      copyright: { html: copyrightHTML },
     },
   } = props;
 
@@ -41,7 +39,7 @@ const SearchPage = props => {
         <Menu items={menuItems} />
       </Header>
       <Search/>
-      <Footer links={footerLinksHTML} copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={siteUrl}
         language={siteLanguage}

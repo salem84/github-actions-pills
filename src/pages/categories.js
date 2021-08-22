@@ -21,8 +21,6 @@ const ContentPage = props => {
   const {
     data: {
       pages: { edges: rawPages },
-      footerLinks: { html: footerLinksHTML },
-      copyright: { html: copyrightHTML },
     },
   } = props;
 
@@ -48,7 +46,7 @@ const ContentPage = props => {
         <Heading title="All Pills" />
         <ListPages pages={pages} categoryList={categoryList} />
       </Article>
-      <Footer links={footerLinksHTML} copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={siteUrl}
         language={siteLanguage}
@@ -82,16 +80,6 @@ export const query = graphql`
       }
     }
     hero: markdownRemark(fileAbsolutePath: { regex: "/content/parts/hero/" }) {
-      html
-    }
-    footerLinks: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
-    ) {
-      html
-    }
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
       html
     }
   }

@@ -35,7 +35,7 @@ const footer = css`
   .copyright {
     font-size: 0.8em;
     text-align: center;
-    margin: 10px 0 30px;
+    margin: 10px 0 5px;
 
     & p {
       color: ${colors.superLightTextColor};
@@ -45,8 +45,11 @@ const footer = css`
   .credits {
     font-size: 0.8em;
     color: ${colors.superLightTextColor};
-    margin: 20px 0 0;
     text-align: center;
+
+    & p {
+      color: ${colors.superLightTextColor};
+    }
 
     & a {
       text-decoration: none;

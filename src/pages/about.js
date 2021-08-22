@@ -18,9 +18,7 @@ import menuItems from '../../content/meta/menu';
 const AboutPage = props => {
   const {
     data: {
-      footerLinks: { html: footerLinksHTML },
       about: { html: aboutHTML },
-      copyright: { html: copyrightHTML },
     },
   } = props;
 
@@ -44,7 +42,7 @@ const AboutPage = props => {
         <Heading title="About" />
         <div dangerouslySetInnerHTML={{ __html: aboutHTML }} />
       </Article> 
-      <Footer links={footerLinksHTML} copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={siteUrl}
         language={siteLanguage}
@@ -59,19 +57,7 @@ export default AboutPage;
 
 export const query = graphql`
   query {
-    
     about: markdownRemark(fileAbsolutePath: { regex: "/content/parts/about/" }) {
-      html
-    }
-
-    footerLinks: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
-    ) {
-      html
-    }
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
       html
     }
   }

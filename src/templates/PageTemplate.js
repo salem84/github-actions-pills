@@ -50,8 +50,6 @@ const PageTemplate = props => {
         excerpt,
       },
       pages: { edges: nodePages },
-      footerLinks: { html: footerLinksHTML },
-      copyright: { html: copyrightHTML },
     },
   } = props;
 
@@ -96,7 +94,7 @@ const PageTemplate = props => {
           <ArticleEdit lastEdit={gitLogLatestDate} contentRepoUrl={config.contentRepoUrl} relativeDirectory={relativeDirectory} />
           <Discussions />
         </Article>
-        <Footer links={footerLinksHTML} copyright={copyrightHTML} />
+        <Footer />
         <Seo
           url={`${siteUrl}${slug}`}
           language={siteLanguage}
@@ -175,16 +173,6 @@ export const query = graphql`
           tableOfContents
         }
       }
-    }
-    footerLinks: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
-    ) {
-      html
-    }
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
-      html
     }
   }
 `;
