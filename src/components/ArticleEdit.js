@@ -16,7 +16,7 @@ const ArticleEdit = props => {
   return (
     <div css={[themeStyle, customStyle]}>
       <div>
-          <a target="_blank" href={editOnGithubURL}>Edit on GitHub</a>
+          <a target="_blank" rel="noopener" href={editOnGithubURL}>Edit on GitHub</a>
 
         <span>
           {" "}&nbsp; · &nbsp;{" "}

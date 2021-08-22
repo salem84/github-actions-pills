@@ -24,7 +24,7 @@ const ArticleAuthor = props => {
     <div css={[themeStyle, customStyle]}>
       <h3>Contributors</h3>
       <div className="avatar-list">
-        <a target="_blank" href={authorUrl}>
+        <a target="_blank" rel="noopener" href={authorUrl}>
             <img className="avatar-image" src={avatarUrl} alt={`@${authorUsername}`}></img>
         </a>
       </div>

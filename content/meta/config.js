@@ -20,6 +20,10 @@ const config = {
   // pathPrefix: '',
 
   contentRepoUrl:  `${base.url}/tree/master/content/docs/`,
+   
+  share: {
+    facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
+  },
 }
 
 module.exports = config
