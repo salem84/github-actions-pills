@@ -10,7 +10,7 @@ const docsQuery = `{
           }
           frontmatter {
             title
-            categories
+            category
           }
           excerpt(pruneLength: 5000)
         }

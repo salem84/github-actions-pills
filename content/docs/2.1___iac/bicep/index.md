@@ -1,6 +1,6 @@
 ---
 title: Deploy Azure Bicep Template
 shortTitle: Bicep
-categories: ['iac']
+category: ['iac']
 agents: ['ubuntu']
 ---

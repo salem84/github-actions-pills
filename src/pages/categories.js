@@ -76,7 +76,7 @@ export const query = graphql`
           frontmatter {
             title
             shortTitle
-            categories
+            category
           }
         }
       }
