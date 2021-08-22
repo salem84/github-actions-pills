@@ -64,8 +64,11 @@ const PageTemplate = props => {
     siteUrl,
     siteLanguage,
     siteTitlePostfix,
-    contentRepoUrl
+    contentRepoUrl,
+    comment
   } = config;
+
+  const { utterances } = comment;
 
   const pages = nodePages.map(item => item.node);
   const layoutStyle = source === 'docs' ? layoutSidebar : undefined;
@@ -96,7 +99,7 @@ const PageTemplate = props => {
           <ArticleEdit lastEdit={gitLogLatestDate} contentRepoUrl={config.contentRepoUrl} relativeDirectory={relativeDirectory} />
           <SocialShare />
           {/* <Discussions /> */}
-          <Utterances />
+          {!!utterances && <Utterances repo={utterances} />}
         </Article>
         <Footer />
         <Seo
