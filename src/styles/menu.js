@@ -39,6 +39,7 @@ const menu = css`
       margin: 0 5px;
       color: ${colors.lightTextColor};
       position: relative;
+      white-space: nowrap;
 
       &:before {
         content: '';
