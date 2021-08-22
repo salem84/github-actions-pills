@@ -53,6 +53,18 @@ const footer = css`
       color: ${colors.lightTextColor};
     }
   }
+
+  .lastBuild {
+    font-size: 0.8em;
+    color: ${colors.superLightTextColor};
+    margin: 5px 0 0;
+    text-align: center;
+
+    & a {
+      text-decoration: none;
+      color: ${colors.lightTextColor};
+    }
+  }
 `;
 
 export default footer;

@@ -58,6 +58,14 @@ module.exports = {
         path: `${__dirname}/content/meta/`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-build-date',
+      options: {
+        formatting: {
+          format: 'MMMM D, YYYY',
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

@@ -1,11 +1,20 @@
 import PropTypes from 'prop-types';
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
+import { useStaticQuery, graphql } from 'gatsby';
 
 import style from '../styles/footer';
 
 const Footer = props => {
   const { links, copyright, themeStyle = style, customStyle = '' } = props;
+
+  const { currentBuildDate } = useStaticQuery(graphql`
+    query {
+      currentBuildDate {
+        currentDate
+      }
+    }
+  `);
 
   return (
     <footer css={[themeStyle, customStyle]}>
@@ -30,8 +39,10 @@ const Footer = props => {
         | Based on{' '}
         <a href="https://github.com/greglobinski/react-website-themes">
           React Website Themes
-        </a>.
+        </a>. 
       </div>
+      <div className="lastBuild">Last Update on <a>{currentBuildDate.currentDate}</a></div>
+      
     </footer>
   );
 };
