@@ -4,6 +4,9 @@ shortTitle: Terraform
 category: iac
 published: 2021-01-01
 updated: 2021-05-04
+agents:
+  - ubuntu
+  - win2016
 tags:
   - "iac"
   - "terraform"

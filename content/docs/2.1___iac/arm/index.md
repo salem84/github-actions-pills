@@ -2,7 +2,8 @@
 title: Deploy Azure Arm Template
 shortTitle: Arm
 category: iac
-agents: ['ubuntu']
+agents: 
+    - win2016
 ---
 
 TBD
