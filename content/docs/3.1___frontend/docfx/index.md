@@ -1,7 +1,7 @@
 ---
 title: DocFx site
 shortTitle: DocFx
-category: ['frontend']
+category: frontend
 agents: ['ubuntu']
 ---
 

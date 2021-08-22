@@ -1,7 +1,7 @@
 ---
 title: "Iac Terraform"
 shortTitle: Terraform
-category: ['iac']
+category: iac
 published: 2021-01-01
 updated: 2021-05-04
 tags:

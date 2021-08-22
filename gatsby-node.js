@@ -131,9 +131,7 @@ exports.createPages = ({ graphql, actions }) => {
           } = edge;
 
           if (category) {
-            category.forEach(category => {
               categorySet.add(category);
-            });
           }
         });
 
