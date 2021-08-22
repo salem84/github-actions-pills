@@ -1,9 +1,8 @@
 import 'gatsby-prismjs-dracula';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import config from './content/meta/config';
 
-require("prismjs/plugins/line-numbers/prism-line-numbers.css")
-
-exports.onInitialClientRender = () => {
+export const onInitialClientRender = () => {
     if (config.share.facebookAppId) {
       window.fbAsyncInit = function() {
         FB.init({ //eslint-disable-line
