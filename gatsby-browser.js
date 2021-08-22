@@ -1,18 +1,17 @@
 import 'gatsby-prismjs-dracula';
-require("prismjs/plugins/line-numbers/prism-line-numbers.css")
-
 import config from './content/meta/config';
 
+require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 
 exports.onInitialClientRender = () => {
     if (config.share.facebookAppId) {
       window.fbAsyncInit = function() {
-        FB.init({
+        FB.init({ //eslint-disable-line
           appId: config.share.facebookAppId,
           xfbml: true,
           version: 'v3.2',
         })
-        FB.AppEvents.logPageView()
+        FB.AppEvents.logPageView() //eslint-disable-line
       }
       ;(function(d, s, id) {
         var js,
