@@ -32,6 +32,7 @@ import categoryList from '../../content/meta/categories';
 import { jsx } from '@emotion/react'
 import Discussions from '../components/Discussions';
 import { Utterances } from '../components/Utterances';
+import { SocialShare } from '../components/SocialShare';
 
 const DEFAULT_GIT_FIELDS = {
   gitLogLatestDate: Date.now(),
@@ -93,6 +94,7 @@ const PageTemplate = props => {
           <ArticleTags tagList={tags} />
           <ArticleAuthor authorUsername={gitLogLatestAuthorName} />
           <ArticleEdit lastEdit={gitLogLatestDate} contentRepoUrl={config.contentRepoUrl} relativeDirectory={relativeDirectory} />
+          <SocialShare />
           {/* <Discussions /> */}
           <Utterances />
         </Article>
