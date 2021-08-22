@@ -13,25 +13,30 @@ function organizePagesInCategories(pages, categoryList) {
   return pages.reduce(
     (categoryContainers, currItem) => {
       const {
-        frontmatter: { category:currItemCategories },
+        frontmatter: { category:currItemCategory },
       } = currItem;
 
-      let pairedCategory = currItemCategories.reduce((pairedCat, currCat) => {
-        if (
-          pairedCat === '' &&
-          categoryList.find(
-            categoryListItem => categoryListItem.name === currCat
-          )
-        ) {
-          return currCat;
-        } else {
-          return pairedCat;
-        }
-      }, '');
+      // let currItemCategories = [ currItemCategory ];
+      // let pairedCategory = currItemCategories.reduce((pairedCat, currCat) => {
+      //   if (
+      //     pairedCat === '' &&
+      //     categoryList.find(
+      //       categoryListItem => categoryListItem.name === currCat
+      //     )
+      //   ) {
+      //     return currCat;
+      //   } else {
+      //     return pairedCat;
+      //   }
+      // }, '');
+
+      let pairedCategory = categoryList.find(
+        categoryListItem => categoryListItem.name === currItemCategory
+      );
 
       if (pairedCategory) {
         const categoryContainer = categoryContainers.find(
-          categoryContainer => categoryContainer.name === pairedCategory
+          categoryContainer => categoryContainer.name === pairedCategory.name
         );
 
         categoryContainer.pages.push(currItem);

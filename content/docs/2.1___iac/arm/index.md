@@ -1,7 +1,7 @@
 ---
 title: Deploy Azure Arm Template
 shortTitle: Arm
-category: ['iac']
+category: iac
 agents: ['ubuntu']
 ---
 
