@@ -126,15 +126,25 @@ const bodytext = css`
     border: 1px solid #efefef;
     border-spacing: 0;
     width: 100%;
+    line-height: 25px;
 
     & th {
     }
     
+    & thead tr {
+      line-height: 35px;
+    }
+
+    & th {
+      padding-left: 10px;
+    }
+
     & tbody tr:nth-child(odd) {
       background-color: #f9f9f9;
     }
     & td {
       text-align: center;
+      font-size: 11pt;
     }
   }
 `;

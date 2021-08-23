@@ -7,7 +7,7 @@ const article = css`
   margin: 0 auto 30px;
 
   ${mq({
-    maxWidth: ['500px', '600px', '700px'],
+    maxWidth: ['500px', '600px', '850px'],
   })};
 `;
 
