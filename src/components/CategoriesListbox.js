@@ -34,17 +34,17 @@ const style=css`
 `;
 
 const CategoriesListbox = props => {
-  const { categoryList, themeStyle = style, customStyle = '' } = props;
+  const { title, categoryList, themeStyle = style, customStyle = '' } = props;
 
   return (
     <div css={[themeStyle]}>
-        <h2>Categories</h2>
+        <h2>{title}</h2>
       <div className="grid">
         {
           categoryList.map(item => {
             const { label, name: to, icon: Icon, external, linkProps } = item;
             return (
-              <Link to={`/categories/${to}`}>{label}</Link>
+              <Link key={label} to={`/categories/${to}`}>{label}</Link>
               )
           })
         }
@@ -54,8 +54,7 @@ const CategoriesListbox = props => {
 };
 
 CategoriesListbox.propTypes = {
-  // children: PropTypes.node,
-  // html: PropTypes.string,
+  title: PropTypes.string,
   categoryList: PropTypes.array,
   themeStyle: PropTypes.string,
   customStyle: PropTypes.string,

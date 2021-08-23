@@ -47,7 +47,7 @@ const IndexPage = props => {
         <div dangerouslySetInnerHTML={{ __html: heroHTML }} />
         {/* <Img fluid={logoFluid} className="image" /> */}
       </Hero> 
-      <CategoriesBox categoryList={categoryList} />
+      <CategoriesBox title='Choose a category' categoryList={categoryList} />
       <Footer />
       <Seo
         url={siteUrl}
