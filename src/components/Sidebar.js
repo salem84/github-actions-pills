@@ -13,7 +13,7 @@ function organizePagesInCategories(pages, categoryList) {
   return pages.reduce(
     (categoryContainers, currItem) => {
       const {
-        frontmatter: { category:currItemCategory },
+        frontmatter: { category: currItemCategory },
       } = currItem;
 
       // let currItemCategories = [ currItemCategory ];
@@ -60,7 +60,12 @@ const Sidebar = props => {
     pathname,
   } = props;
 
-  const pagesInCategories = organizePagesInCategories(pages, categoryList);
+  let categories = categoryList;
+  const currPage = pages.find(page => page.fields.slug === pathname);
+  if(currPage) {
+    categories = categoryList.filter(category => category.name === currPage.frontmatter.category)
+  }
+  const pagesInCategories = organizePagesInCategories(pages, categories);
 
   return (
     <aside css={[themeStyle, customStyle]}>
