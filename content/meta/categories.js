@@ -9,6 +9,7 @@ export const categories = [
   { name: 'azure', label: 'Azure', icon: CloudIcon },
   { name: 'iac', label: 'Infrastructure As Code', icon: ServerIcon },
   { name: 'frontend', label: 'Frontend', icon: PenToolIcon},
+  { name: 'k8s', label: 'K8s & Docker', icon: SettingsIcon },
 ];
 
 export default categories;
