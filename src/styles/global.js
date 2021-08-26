@@ -63,7 +63,10 @@ const GlobalStyle = props => (
         *::-webkit-scrollbar-thumb {
             background-color: ${colors.scrollBarThumb};
         }
-      
+        
+        .tag-cloud-tag {
+            cursor: pointer;
+        }
       `}
     />
   )
