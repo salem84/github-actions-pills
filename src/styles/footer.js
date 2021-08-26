@@ -40,6 +40,11 @@ const footer = css`
     & p {
       color: ${colors.superLightTextColor};
     }
+
+    & a {
+      text-decoration: none;
+      color: ${colors.lightTextColor};
+    }
   }
 
   .credits {

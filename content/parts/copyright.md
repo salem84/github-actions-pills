@@ -1,1 +1,1 @@
-MIT License
+[MIT License](https://github.com/salem84/github-actions-pills/blob/master/LICENSE)
